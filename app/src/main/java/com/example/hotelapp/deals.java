@@ -8,6 +8,7 @@ import androidx.appcompat.widget.SearchView;
 public class deals extends AppCompatActivity {
 
     SearchView searchView;
+    //this is it
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
