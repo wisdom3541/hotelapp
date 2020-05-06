@@ -6,12 +6,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 public class start extends AppCompatActivity {
 
     Intent intent;
     TextView getstarted;
+    ProgressBar loadinganim;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,14 +21,16 @@ public class start extends AppCompatActivity {
         setContentView(R.layout.firstpage);
 
         getstarted = (TextView)findViewById(R.id.start);
+        loadinganim = (ProgressBar)findViewById(R.id.loadinganim);
         intent = new Intent(start.this,login.class);
 
-        new CountDownTimer(3000, 1000) {
+        new CountDownTimer(5000, 1000) {
             public void onTick(long millisUntilFinished) {
                 //do  nothing
             }
 
             public void onFinish() {
+                findViewById(R.id.loadinganim).setVisibility(View.GONE);
                 getstarted.setVisibility(View.VISIBLE);
             }
         }.start();
